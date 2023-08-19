@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NavIcon extends StatelessWidget {
-  const NavIcon({super.key, required this.onTap, required this.icon});
+class NavElement extends StatelessWidget {
+  const NavElement({super.key, required this.onTap, required this.icon});
 
   final void Function() onTap;
   final IconData? icon;

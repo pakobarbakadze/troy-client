@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/shared/bottom_nav/nav_element.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BottomNav extends StatelessWidget {
+import 'package:troy_client/features/shared/bottom_nav/nav_element.dart';
+import 'package:troy_client/providers/screen_provider.dart';
+
+class BottomNav extends ConsumerWidget {
   const BottomNav({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(8),
@@ -23,25 +26,35 @@ class BottomNav extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              NavIcon(
+              NavElement(
                 icon: Icons.home,
-                onTap: () {},
+                onTap: () {
+                  ref.read(screenProvider.notifier).setScreen(0);
+                },
               ),
-              NavIcon(
+              NavElement(
                 icon: Icons.search,
-                onTap: () {},
+                onTap: () {
+                  ref.read(screenProvider.notifier).setScreen(1);
+                },
               ),
-              NavIcon(
+              NavElement(
                 icon: Icons.add,
-                onTap: () {},
+                onTap: () {
+                  ref.read(screenProvider.notifier).setScreen(2);
+                },
               ),
-              NavIcon(
+              NavElement(
                 icon: Icons.shopping_cart,
-                onTap: () {},
+                onTap: () {
+                  ref.read(screenProvider.notifier).setScreen(3);
+                },
               ),
-              NavIcon(
+              NavElement(
                 icon: Icons.person,
-                onTap: () {},
+                onTap: () {
+                  ref.read(screenProvider.notifier).setScreen(4);
+                },
               ),
             ],
           ),
