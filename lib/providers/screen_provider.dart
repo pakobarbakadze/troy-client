@@ -23,4 +23,8 @@ class ScreenNotifier extends StateNotifier<Widget> {
   void setScreen(int index) {
     state = screenList[index];
   }
+
+  int get screenIndex {
+    return screenList.indexOf(state);
+  }
 }

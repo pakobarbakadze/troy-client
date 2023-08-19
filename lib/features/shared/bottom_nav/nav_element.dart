@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class NavElement extends StatelessWidget {
-  const NavElement({super.key, required this.onTap, required this.icon});
+  const NavElement({
+    super.key,
+    required this.onTap,
+    required this.icon,
+    required this.isSelected,
+  });
 
   final void Function() onTap;
   final IconData? icon;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +21,7 @@ class NavElement extends StatelessWidget {
         width: 36,
         child: Icon(
           icon,
-          color: Colors.white,
+          color: isSelected ? Colors.white : Colors.grey,
         ),
       ),
     );

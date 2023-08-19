@@ -11,6 +11,9 @@ class BottomNav extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(screenProvider);
+    int selectedIndex = ref.read(screenProvider.notifier).screenIndex;
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(8),
@@ -27,31 +30,38 @@ class BottomNav extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               NavElement(
-                icon: Icons.home,
+                icon: selectedIndex == 0 ? Icons.home : Icons.home_outlined,
+                isSelected: selectedIndex == 0 ? true : false,
                 onTap: () {
                   ref.read(screenProvider.notifier).setScreen(0);
                 },
               ),
               NavElement(
-                icon: Icons.search,
+                icon: selectedIndex == 1 ? Icons.search : Icons.search_outlined,
+                isSelected: selectedIndex == 1 ? true : false,
                 onTap: () {
                   ref.read(screenProvider.notifier).setScreen(1);
                 },
               ),
               NavElement(
-                icon: Icons.add,
+                icon: selectedIndex == 2 ? Icons.add : Icons.add_outlined,
+                isSelected: selectedIndex == 2 ? true : false,
                 onTap: () {
                   ref.read(screenProvider.notifier).setScreen(2);
                 },
               ),
               NavElement(
-                icon: Icons.shopping_cart,
+                icon: selectedIndex == 3
+                    ? Icons.shopping_cart
+                    : Icons.shopping_cart_outlined,
+                isSelected: selectedIndex == 3 ? true : false,
                 onTap: () {
                   ref.read(screenProvider.notifier).setScreen(3);
                 },
               ),
               NavElement(
-                icon: Icons.person,
+                icon: selectedIndex == 4 ? Icons.person : Icons.person_outline,
+                isSelected: selectedIndex == 4 ? true : false,
                 onTap: () {
                   ref.read(screenProvider.notifier).setScreen(4);
                 },
