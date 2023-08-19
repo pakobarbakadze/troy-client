@@ -11,12 +11,10 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'Search Screen',
-          style: appstyle(35, Colors.black, FontWeight.bold),
-        ),
+    return Center(
+      child: Text(
+        'Search Screen',
+        style: appstyle(35, Colors.black, FontWeight.bold),
       ),
     );
   }
