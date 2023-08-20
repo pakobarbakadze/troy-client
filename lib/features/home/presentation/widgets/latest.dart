@@ -34,9 +34,10 @@ class Latest extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 250,
+          height: 115,
           child: ItemsList(
-            color: Colors.amber,
+            width: 115,
+            noInfo: true,
           ),
         ),
       ],

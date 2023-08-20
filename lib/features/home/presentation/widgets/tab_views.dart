@@ -13,19 +13,13 @@ class TabViews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 320,
       child: TabBarView(
         controller: tabController,
         children: const [
-          ItemsList(
-            color: Colors.green,
-          ),
-          ItemsList(
-            color: Colors.blue,
-          ),
-          ItemsList(
-            color: Colors.red,
-          ),
+          ItemsList(),
+          ItemsList(),
+          ItemsList(),
         ],
       ),
     );

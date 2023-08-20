@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ItemsList extends StatelessWidget {
-  const ItemsList({super.key, required this.color});
+import 'item_card.dart';
 
-  final Color color;
+class ItemsList extends StatelessWidget {
+  const ItemsList({super.key, this.width, this.noInfo});
+
+  final double? width;
+  final bool? noInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +14,8 @@ class ItemsList extends StatelessWidget {
       itemCount: 5,
       scrollDirection: Axis.horizontal,
       itemBuilder: (ctx, index) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-        child: Container(
-          color: color,
-          width: 200,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 11.5, vertical: 10),
+        child: ItemCard(width: width ?? 250, noInfo: noInfo),
       ),
     );
   }
