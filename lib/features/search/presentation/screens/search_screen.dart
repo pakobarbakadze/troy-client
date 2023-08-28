@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/shared/appstyle.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -11,10 +10,9 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         'Search Screen',
-        style: appstyle(35, Colors.black, FontWeight.bold),
       ),
     );
   }

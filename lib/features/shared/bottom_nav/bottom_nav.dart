@@ -52,8 +52,8 @@ class BottomNav extends ConsumerWidget {
               ),
               NavElement(
                 icon: selectedIndex == 3
-                    ? Icons.shopping_cart
-                    : Icons.shopping_cart_outlined,
+                    ? Icons.bookmark
+                    : Icons.bookmark_outline,
                 isSelected: selectedIndex == 3 ? true : false,
                 onTap: () {
                   ref.read(screenProvider.notifier).setScreen(3);

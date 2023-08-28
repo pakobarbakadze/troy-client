@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/shared/appstyle.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -11,10 +10,9 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         'Profile Screen',
-        style: appstyle(35, Colors.black, FontWeight.bold),
       ),
     );
   }

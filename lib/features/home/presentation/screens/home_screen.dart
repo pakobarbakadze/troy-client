@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:troy_client/features/home/presentation/widgets/tab_views.dart';
-import 'package:troy_client/features/home/presentation/widgets/tabs.dart';
-
-import '../widgets/latest.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -18,12 +13,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Tabs(tabController: tabController),
-        TabViews(tabController: tabController),
-        const Latest()
-      ],
+    return const Center(
+      child: Text(
+        'Home Screen',
+      ),
     );
   }
 }
