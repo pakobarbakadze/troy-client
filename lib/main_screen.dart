@@ -5,21 +5,27 @@ import 'package:troy_client/providers/screen_provider.dart';
 
 import 'package:troy_client/features/shared/bottom_nav/bottom_nav.dart';
 
-class MainScreen extends ConsumerStatefulWidget {
+var kColorScheme =
+    ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 65, 73, 100));
+
+class MainScreen extends ConsumerWidget {
   const MainScreen({super.key});
 
   @override
-  ConsumerState<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends ConsumerState<MainScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final screen = ref.watch(screenProvider);
 
     return MaterialApp(
+      theme: ThemeData().copyWith(
+        colorScheme: kColorScheme,
+        appBarTheme: AppBarTheme(
+          centerTitle: false,
+          backgroundColor: kColorScheme.background,
+          foregroundColor: kColorScheme.primary,
+          elevation: 0,
+        ),
+      ),
       home: Scaffold(
-        backgroundColor: const Color(0xFFE2E2E2),
         bottomNavigationBar: const BottomNav(),
         body: screen,
       ),
