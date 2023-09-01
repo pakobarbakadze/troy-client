@@ -1,9 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:troy_client/features/shared/entities/stay.dart';
+import 'package:troy_client/features/home/presentation/widgets/stay_card.dart';
 
 class PopularStays extends StatelessWidget {
   const PopularStays({
     super.key,
   });
+
+  final List<Stay> stays = const [
+    Stay(
+      id: 1,
+      name: 'Sunshine Grand Villa Resort & Spa',
+      price: 78,
+      description: 'Spa hotel on very good location',
+      features: ['Open pool', '7 bedrooms'],
+      images: [
+        'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
+      ],
+    ),
+    Stay(
+      id: 2,
+      name: 'Sunshine Grand Villa Resort & Spa',
+      price: 78,
+      description: 'Spa hotel on very good location',
+      features: ['Open pool', '7 bedrooms'],
+      images: [
+        'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
+      ],
+    ),
+    Stay(
+      id: 3,
+      name: 'Sunshine Grand Villa Resort & Spa',
+      price: 78,
+      description: 'Spa hotel on very good location',
+      features: ['Open pool', '7 bedrooms'],
+      images: [
+        'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
+      ],
+    ),
+    Stay(
+      id: 4,
+      name: 'Sunshine Grand Villa Resort & Spa',
+      price: 78,
+      description: 'Spa hotel on very good location',
+      features: ['Open pool', '7 bedrooms'],
+      images: [
+        'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
+      ],
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +76,7 @@ class PopularStays extends StatelessWidget {
             const SizedBox(height: 10),
             Expanded(
               child: GridView.builder(
-                itemCount: 10,
+                itemCount: stays.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 20,
@@ -45,6 +90,7 @@ class PopularStays extends StatelessWidget {
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(16),
                   ),
+                  child: StayCard(stay: stays[index]),
                 ),
               ),
             )
