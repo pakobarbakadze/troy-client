@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/shared/entities/stay.dart';
+import 'package:troy_client/features/home/domain/entities/stay.dart';
 import 'package:troy_client/features/home/presentation/widgets/stay_card.dart';
 
 class PopularStays extends StatelessWidget {

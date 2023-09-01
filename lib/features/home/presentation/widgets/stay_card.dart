@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/shared/entities/stay.dart';
+import 'package:troy_client/features/home/domain/entities/stay.dart';
 import 'package:troy_client/features/stay_details/presentation/screens/stay_details_screen.dart';
 
 class StayCard extends StatelessWidget {
