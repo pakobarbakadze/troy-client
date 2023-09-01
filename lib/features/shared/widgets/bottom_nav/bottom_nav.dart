@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:troy_client/features/shared/bottom_nav/nav_element.dart';
+import 'package:troy_client/features/shared/widgets/bottom_nav/nav_element.dart';
 import 'package:troy_client/providers/screen_provider.dart';
 
 class BottomNav extends ConsumerWidget {

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:troy_client/providers/screen_provider.dart';
 
-import 'package:troy_client/features/shared/bottom_nav/bottom_nav.dart';
+import 'package:troy_client/features/shared/widgets/bottom_nav/bottom_nav.dart';
 
 var kColorScheme =
     ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 65, 73, 100));
