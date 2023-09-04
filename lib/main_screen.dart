@@ -5,8 +5,7 @@ import 'package:troy_client/providers/screen_provider.dart';
 
 import 'package:troy_client/features/shared/widgets/bottom_nav/bottom_nav.dart';
 
-var kColorScheme =
-    ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 65, 73, 100));
+import 'config/theme/theme.dart';
 
 class MainScreen extends ConsumerWidget {
   const MainScreen({super.key});
@@ -16,15 +15,7 @@ class MainScreen extends ConsumerWidget {
     final screen = ref.watch(screenProvider);
 
     return MaterialApp(
-      theme: ThemeData().copyWith(
-        colorScheme: kColorScheme,
-        appBarTheme: AppBarTheme(
-          centerTitle: false,
-          backgroundColor: kColorScheme.background,
-          foregroundColor: kColorScheme.primary,
-          elevation: 0,
-        ),
-      ),
+      theme: theme(),
       home: Scaffold(
         bottomNavigationBar: const BottomNav(),
         body: screen,
