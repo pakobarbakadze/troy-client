@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:troy_client/features/home/domain/entities/stay.dart';
 import 'package:troy_client/features/home/presentation/widgets/stay_card.dart';
 
 import '../riverpod/stay/remote/remote_stay_riverpod.dart';
@@ -9,49 +8,6 @@ class PopularStays extends ConsumerWidget {
   const PopularStays({
     super.key,
   });
-
-  // final List<Stay> stays = const [
-  //   Stay(
-  //     id: 1,
-  //     name: 'Sunshine Grand Villa Resort & Spa',
-  //     price: 78,
-  //     description: 'Spa hotel on very good location',
-  //     features: ['Open pool', '7 bedrooms'],
-  //     images: [
-  //       'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
-  //     ],
-  //   ),
-  //   Stay(
-  //     id: 2,
-  //     name: 'Sunshine Grand Villa Resort & Spa',
-  //     price: 78,
-  //     description: 'Spa hotel on very good location',
-  //     features: ['Open pool', '7 bedrooms'],
-  //     images: [
-  //       'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
-  //     ],
-  //   ),
-  //   Stay(
-  //     id: 3,
-  //     name: 'Sunshine Grand Villa Resort & Spa',
-  //     price: 78,
-  //     description: 'Spa hotel on very good location',
-  //     features: ['Open pool', '7 bedrooms'],
-  //     images: [
-  //       'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
-  //     ],
-  //   ),
-  //   Stay(
-  //     id: 4,
-  //     name: 'Sunshine Grand Villa Resort & Spa',
-  //     price: 78,
-  //     description: 'Spa hotel on very good location',
-  //     features: ['Open pool', '7 bedrooms'],
-  //     images: [
-  //       'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg'
-  //     ],
-  //   ),
-  // ];
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -109,7 +65,7 @@ class PopularStays extends ConsumerWidget {
                 },
                 error: (error, stackTrace) {
                   return Center(
-                    child: Text('Error loading stays: $error'),
+                    child: Text(error.toString()),
                   );
                 },
               ),
