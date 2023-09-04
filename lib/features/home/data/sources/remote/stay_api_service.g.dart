@@ -13,7 +13,7 @@ class _StayApiService implements StayApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'localhost:5000/api';
+    baseUrl ??= 'http://localhost:5000/api';
   }
 
   final Dio _dio;

@@ -5,7 +5,7 @@ class Stay extends Equatable {
   final String name;
   final int price;
   final String description;
-  final List<String> features;
+  final List features;
   final List images;
 
   const Stay({

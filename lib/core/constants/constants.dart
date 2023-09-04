@@ -1,2 +1,2 @@
 // ignore: constant_identifier_names
-const String APIBaseURL = 'localhost:5000/api';
+const String APIBaseURL = 'http://localhost:5000/api';
