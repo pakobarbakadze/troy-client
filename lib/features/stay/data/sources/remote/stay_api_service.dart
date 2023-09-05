@@ -12,4 +12,7 @@ abstract class StayApiService {
 
   @GET('/stay')
   Future<HttpResponse<List<StayModel>>> getStays();
+
+  @POST('/stay')
+  Future<void> saveStay(@Body() StayModel stay);
 }

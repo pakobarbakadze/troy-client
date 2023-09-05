@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:troy_client/core/resources/data_state.dart';
+import 'package:troy_client/features/stay/domain/entities/stay.dart';
 
 import '../../domain/repository/stay_repository.dart';
 import '../models/stay.dart';
@@ -17,6 +18,15 @@ class StayRepositoryImpl extends StayRepository {
       return DataSuccess(httpResponse.data);
     } on DioException catch (e) {
       return DataFailed(e);
+    }
+  }
+
+  @override
+  Future<void> saveStay(Stay stay) async {
+    try {
+      await _stayApiService.saveStay(StayModel.fromEntity(stay));
+    } catch (e) {
+      rethrow;
     }
   }
 }

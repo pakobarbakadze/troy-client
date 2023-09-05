@@ -1,40 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart'; // Import Riverpod
+import 'package:troy_client/features/stay/domain/entities/stay.dart';
 
 import '../../../shared/widgets/custom_form_field.dart';
+import '../riverpod/stay/remote/remote_stay_riverpod.dart';
 import 'submit_btn.dart';
 
-class AddStayForm extends StatefulWidget {
+class AddStayForm extends ConsumerWidget {
+  // Change to ConsumerWidget
   const AddStayForm({
     super.key,
   });
 
   @override
-  State<AddStayForm> createState() => _AddStayFormState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final formKey = GlobalKey<FormState>();
+    final saveStay = ref.read(saveStayProvider);
 
-class _AddStayFormState extends State<AddStayForm> {
-  final _formKey = GlobalKey<FormState>();
+    String enteredName = '';
+    int enteredPrice = 0;
+    String enteredDescription = '';
+    final List<String> enteredImages = [];
 
-  String _enteredName = '';
-  int _enteredPrice = 0;
-  String _enteredDescription = '';
-  final List<String> _enteredImages = [];
-
-  void _addStay() {
-    if (!_formKey.currentState!.validate()) {
-      return;
+    void addStay() {
+      if (!formKey.currentState!.validate()) {
+        return;
+      }
+      formKey.currentState!.save();
+      saveStay(
+        Stay(
+            name: enteredName,
+            price: enteredPrice,
+            description: enteredDescription,
+            features: const ['test'],
+            images: enteredImages),
+      );
+      // print(enteredName);
+      // print(enteredPrice);
+      // print(enteredDescription);
+      // print(enteredImages);
     }
-    _formKey.currentState!.save();
-    print(_enteredName);
-    print(_enteredPrice);
-    print(_enteredDescription);
-    print(_enteredImages);
-  }
 
-  @override
-  Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
+      key: formKey,
       child: Column(
         children: [
           Row(
@@ -48,7 +56,7 @@ class _AddStayFormState extends State<AddStayForm> {
                     }
                     return null;
                   },
-                  onSaved: (newValue) => _enteredName = newValue!,
+                  onSaved: (newValue) => enteredName = newValue!,
                 ),
               ),
               const SizedBox(width: 15),
@@ -63,7 +71,7 @@ class _AddStayFormState extends State<AddStayForm> {
                     }
                     return null;
                   },
-                  onSaved: (newValue) => _enteredPrice = int.parse(newValue!),
+                  onSaved: (newValue) => enteredPrice = int.parse(newValue!),
                 ),
               ),
             ],
@@ -77,7 +85,7 @@ class _AddStayFormState extends State<AddStayForm> {
               }
               return null;
             },
-            onSaved: (newValue) => _enteredDescription = newValue!,
+            onSaved: (newValue) => enteredDescription = newValue!,
           ),
           const SizedBox(height: 15),
           CustomFormField(
@@ -88,10 +96,10 @@ class _AddStayFormState extends State<AddStayForm> {
               }
               return null;
             },
-            onSaved: (newValue) => _enteredImages.add(newValue!),
+            onSaved: (newValue) => enteredImages.add(newValue!),
           ),
           const SizedBox(height: 15),
-          SubmitBtn(addStay: _addStay)
+          SubmitBtn(addStay: addStay)
         ],
       ),
     );

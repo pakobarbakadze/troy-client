@@ -2,7 +2,7 @@ import '../../domain/entities/stay.dart';
 
 class StayModel extends Stay {
   const StayModel({
-    required super.id,
+    super.id,
     required super.name,
     required super.price,
     required super.description,
@@ -21,7 +21,7 @@ class StayModel extends Stay {
     );
   }
 
-  factory StayModel.fromEntity(StayModel entity) {
+  factory StayModel.fromEntity(Stay entity) {
     return StayModel(
       id: entity.id,
       name: entity.name,
@@ -30,5 +30,15 @@ class StayModel extends Stay {
       features: entity.features,
       images: entity.images,
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'price': price,
+      'description': description,
+      'features': features,
+      'images': images,
+    };
   }
 }

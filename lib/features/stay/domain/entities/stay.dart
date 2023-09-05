@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Stay extends Equatable {
-  final int id;
+  final int? id;
   final String name;
   final int price;
   final String description;
@@ -9,7 +9,7 @@ class Stay extends Equatable {
   final List images;
 
   const Stay({
-    required this.id,
+    this.id,
     required this.name,
     required this.price,
     required this.description,
