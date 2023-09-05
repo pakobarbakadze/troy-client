@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:troy_client/features/home/presentation/widgets/stay_card.dart';
 
 import '../riverpod/stay/remote/remote_stay_riverpod.dart';
+import 'stay_card.dart';
 
 class PopularStays extends ConsumerWidget {
   const PopularStays({

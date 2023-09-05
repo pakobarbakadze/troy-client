@@ -1,4 +1,4 @@
-import 'package:troy_client/features/home/domain/entities/stay.dart';
+import '../../domain/entities/stay.dart';
 
 class StayModel extends Stay {
   const StayModel({

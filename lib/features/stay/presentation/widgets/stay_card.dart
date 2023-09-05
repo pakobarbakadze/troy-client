@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/home/domain/entities/stay.dart';
-import 'package:troy_client/features/stay_details/presentation/screens/stay_details_screen.dart';
+
+import '../../domain/entities/stay.dart';
+import '../screens/stay_details_screen.dart';
 
 class StayCard extends StatelessWidget {
   const StayCard({super.key, required this.stay});

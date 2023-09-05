@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/add_stay/presentation/widgets/add_stay_form.dart';
+
+import '../widgets/add_stay_form.dart';
 
 class AddStayScreen extends StatelessWidget {
   const AddStayScreen({super.key});

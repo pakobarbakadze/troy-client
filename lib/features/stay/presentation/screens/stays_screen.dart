@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/home/presentation/widgets/popular_stays.dart';
-import 'package:troy_client/features/home/presentation/widgets/tab_bars.dart';
-import 'package:troy_client/features/home/presentation/widgets/tab_views.dart';
+
+import '../widgets/popular_stays.dart';
+import '../widgets/tab_bars.dart';
+import '../widgets/tab_views.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

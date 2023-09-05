@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/home/domain/entities/stay.dart';
+
+import '../../domain/entities/stay.dart';
 
 class StayDetailsScreen extends StatelessWidget {
   const StayDetailsScreen({super.key, required this.stay});

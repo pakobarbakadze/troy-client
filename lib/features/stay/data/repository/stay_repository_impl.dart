@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:troy_client/core/resources/data_state.dart';
-import 'package:troy_client/features/home/data/models/stay.dart';
-import 'package:troy_client/features/home/data/sources/remote/stay_api_service.dart';
-import 'package:troy_client/features/home/domain/repository/stay_repository.dart';
+
+import '../../domain/repository/stay_repository.dart';
+import '../models/stay.dart';
+import '../sources/remote/stay_api_service.dart';
 
 class StayRepositoryImpl extends StayRepository {
   final StayApiService _stayApiService;

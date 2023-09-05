@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:troy_client/features/home/presentation/widgets/view_items.dart';
+
+import 'view_items.dart';
 
 class TabViews extends StatelessWidget {
   const TabViews({
