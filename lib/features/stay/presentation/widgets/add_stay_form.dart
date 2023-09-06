@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart'; // Import Riverpod
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:troy_client/features/stay/domain/entities/stay.dart';
 
 import '../../../shared/widgets/custom_form_field.dart';
@@ -7,7 +7,6 @@ import '../riverpod/stay/remote/remote_stay_riverpod.dart';
 import 'submit_btn.dart';
 
 class AddStayForm extends ConsumerWidget {
-  // Change to ConsumerWidget
   const AddStayForm({
     super.key,
   });
@@ -35,10 +34,6 @@ class AddStayForm extends ConsumerWidget {
             features: const ['test'],
             images: enteredImages),
       );
-      // print(enteredName);
-      // print(enteredPrice);
-      // print(enteredDescription);
-      // print(enteredImages);
     }
 
     return Form(
