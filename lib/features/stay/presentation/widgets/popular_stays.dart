@@ -11,7 +11,7 @@ class PopularStays extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final staysAsyncValue = ref.watch(staysProvider);
+    final staysAsyncValue = ref.watch(remoteStaysProvider);
 
     return Expanded(
       child: Padding(

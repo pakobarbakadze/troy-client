@@ -22,11 +22,13 @@ class StayRepositoryImpl extends StayRepository {
   }
 
   @override
-  Future<void> saveStay(Stay stay) async {
+  Future<DataState> saveStay(Stay stay) async {
     try {
-      await _stayApiService.saveStay(StayModel.fromEntity(stay));
-    } catch (e) {
-      rethrow;
+      final httpResponse =
+          await _stayApiService.saveStay(StayModel.fromEntity(stay));
+      return DataSuccess(httpResponse.data);
+    } on DioException catch (e) {
+      return DataFailed(e);
     }
   }
 }

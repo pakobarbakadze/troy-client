@@ -6,17 +6,15 @@ import 'package:troy_client/injection.dart';
 import '../../../../domain/entities/stay.dart';
 import '../../../../domain/usecase/get_stays.dart';
 
-final staysProvider = FutureProvider<List<Stay>>((ref) async {
+final remoteStaysProvider = FutureProvider<List<Stay>>((ref) async {
   GetStaysUseCase getStaysUseCase = GetStaysUseCase(s1());
-  try {
-    DataState<List<Stay>> response = await getStaysUseCase.call();
-    if (response.data != null) {
-      return response.data!;
-    } else {
-      throw ("No data available");
-    }
-  } catch (err) {
-    throw ("Error fetching stays: $err");
+
+  final dataState = await getStaysUseCase();
+
+  if (dataState is DataSuccess && dataState.data!.isNotEmpty) {
+    return dataState.data!;
+  } else {
+    throw 'Failed to fetch stays';
   }
 });
 
