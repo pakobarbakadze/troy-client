@@ -1,13 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 class Stay extends Equatable {
-  final int? id;
-  final String name;
-  final int price;
-  final String description;
-  final List features;
-  final List images;
-
   const Stay({
     this.id,
     required this.name,
@@ -16,6 +9,16 @@ class Stay extends Equatable {
     required this.features,
     required this.images,
   });
+
+  final String? id;
+  final String name;
+  final int price;
+  final String description;
+  final List features;
+  final List images;
+
+  @override
+  bool get stringify => true;
 
   @override
   List<Object?> get props => [
